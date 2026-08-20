@@ -1,0 +1,5 @@
+engine,split,mtp,prompt_tokens,generated_tokens,prefill_tok_s,generation_tok_s,ttft_s,tpot_ms,mtp_acceptance_pct,mtp_mean_len,notes
+vLLM,tensor,on,250000,2048,1200.11,20.75,208.314,48.20,77.02,4.85,"prefill derived as prompt_tokens/TTFT; decode derived as 1000/TPOT; benchmark overall output throughput was 6.67 tok/s"
+llama.cpp,layer,on,260052,414,835.64,31.56,,,,2.82,"draft acceptance 36.351%; 269 accepted / 740 generated"
+llama.cpp,tensor,on,260052,295,705.51,37.69,,,,,"backend sampling not supported with SPLIT_MODE_TENSOR; CPU sampler warning"
+llama.cpp,tensor,off,260052,280,825.90,26.09,,,,,"embedded MTP blk.64 tensors unused as expected; graphs reused 278"
