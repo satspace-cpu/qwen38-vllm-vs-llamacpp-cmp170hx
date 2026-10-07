@@ -1,6 +1,6 @@
 # Qwen3.8 Flash-Next: AWQ W4A16 vs FP8 on 4× CMP 170HX — 520K Context + Coding Agent Test
 
-[Русская версия](README_RU.md) · [Tasks and reference solutions](TASKS_AND_SOLUTIONS.md) · [Raw benchmark CSV](benchmark_results.csv)
+[Русская версия](README_RU.md) · [Benchmark script](bench_vllm_512k_exact_mtp4.py) · [Tasks and reference solutions](TASKS_AND_SOLUTIONS.md) · [Raw benchmark CSV](benchmark_results.csv)
 
 ## Why this test
 
@@ -121,11 +121,7 @@ The served model name intentionally remained the same as the FP8 profile because
 
 The long-context benchmark was run through the OpenAI-compatible vLLM API using an **exact cold-prompt test**.
 
-The benchmark script:
-
-```text
-bench_vllm_512k_exact_mtp4.py
-```
+The exact benchmark script is included in this repository: [bench_vllm_512k_exact_mtp4.py](bench_vllm_512k_exact_mtp4.py).
 
 uses `/tokenize` to build prompts at the requested real token count and gives every test a unique prefix so that vLLM's prefix cache cannot turn the run into an artificial hot-cache benchmark.
 
