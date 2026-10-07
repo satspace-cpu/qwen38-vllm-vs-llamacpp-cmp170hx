@@ -173,3 +173,17 @@ This project focuses specifically on that region.
 ## Status
 
 Initial data uploaded. More measurements, CSV datasets and proper plotted charts will be added as the test matrix grows.
+
+
+---
+
+## New: Qwen3.8 Flash-Next AWQ W4A16 vs FP8 on 4× CMP 170HX
+
+A new 520K-context comparison is now available, including exact cold-prefill/decode benchmarks and an eight-task coding-agent quality comparison.
+
+- [English article](flash-next-awq-vs-fp8/README.md)
+- [Русская версия](flash-next-awq-vs-fp8/README_RU.md)
+- [Coding tasks and reference solutions](flash-next-awq-vs-fp8/TASKS_AND_SOLUTIONS.md)
+- [Raw benchmark CSV](flash-next-awq-vs-fp8/benchmark_results.csv)
+
+Headline result on this server: AWQ W4A16 was about **21% faster on cold prefill**, about **41% faster on decode**, and completed the coding-agent task set in about **26% less wall time**, while the manual quality score remained close to FP8 (**78/80 vs 79.5/80**).
