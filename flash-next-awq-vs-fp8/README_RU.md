@@ -1,6 +1,6 @@
 # Qwen3.8 Flash-Next: AWQ W4A16 против FP8 на 4× CMP 170HX — контекст 520K + тест кодинг-агента
 
-[English version](README.md) · [Задачи и эталонные решения](TASKS_AND_SOLUTIONS_RU.md) · [CSV с результатами](benchmark_results.csv)
+[English version](README.md) · [Python-скрипт теста](bench_vllm_512k_exact_mtp4.py) · [Задачи и эталонные решения](TASKS_AND_SOLUTIONS_RU.md) · [CSV с результатами](benchmark_results.csv)
 
 ## Зачем проводился этот тест
 
@@ -121,11 +121,7 @@ VLLM_ALLOW_LONG_MAX_MODEL_LEN=1 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 
 Тест проводился через OpenAI-compatible API vLLM с **точным cold prompt**.
 
-Использовался скрипт:
-
-```text
-bench_vllm_512k_exact_mtp4.py
-```
+Точный Python-скрипт теста добавлен в репозиторий: [bench_vllm_512k_exact_mtp4.py](bench_vllm_512k_exact_mtp4.py).
 
 Он через `/tokenize` подбирает реальное число токенов и создаёт уникальный prefix для каждого прогона. Поэтому включённый на сервере prefix cache не превращает длинный тест в искусственный hot-cache результат.
 
