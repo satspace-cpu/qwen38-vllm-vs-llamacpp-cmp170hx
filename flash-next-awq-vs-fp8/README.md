@@ -1,17 +1,18 @@
-# Qwen3.8 Flash-Next: AWQ W4A16 vs FP8 on 4× CMP 170HX — 520K Context + Coding Agent Test
+# Qwen3.8: Flash-Next AWQ W4A16 vs Flash-Next FP8 vs Dense 27B on CMP 170HX — 520K Context + Coding Agent Test
 
-[Русская версия](README_RU.md) · [Benchmark script](bench_vllm_512k_exact_mtp4.py) · [Tasks and reference solutions](TASKS_AND_SOLUTIONS.md) · [Raw benchmark CSV](benchmark_results.csv)
+[Русская версия](README_RU.md) · [Benchmark script](bench_vllm_512k_exact_mtp4.py) · [Tasks and reference solutions](TASKS_AND_SOLUTIONS.md) · [Long-context CSV](benchmark_results.csv) · [Coding-agent CSV](coding_agent_results.csv)
 
 ## Why this test
 
-This is a practical comparison of two quantizations of the **same Qwen3.8 Flash-Next architecture** on an unusual but very capable local inference server built around four unlocked NVIDIA CMP 170HX cards.
+This started as a practical comparison of two quantizations of the **same Qwen3.8 Flash-Next architecture** on an unusual but very capable local inference server built around four unlocked NVIDIA CMP 170HX cards. A third run was then added with the **dense Qwen3.8-27B BF16 model on 2× CMP 170HX**, using the exact same eight coding-agent tasks.
 
 The goal was not just to measure short-prompt tokens/s. We wanted to answer two questions that matter for real coding-agent use:
 
-1. How do **AWQ W4A16** and **FP8** behave from 15K all the way to ~520K prompt tokens?
+1. How do **Flash-Next AWQ W4A16** and **Flash-Next FP8** behave from 15K all the way to ~520K prompt tokens?
 2. Does the much faster 4-bit AWQ model lose enough coding/reasoning quality to offset the speed gain?
+3. How does the smaller **dense Qwen3.8-27B BF16** model compare on the same coding-agent workload?
 
-The result on this machine was surprisingly clear: **AWQ W4A16 was about 21% faster on cold prefill and about 41% faster on decode, while manual review of eight coding tasks showed only a very small quality difference versus FP8.**
+The result on this machine was surprisingly clear: **AWQ W4A16 was about 21% faster on cold prefill and about 41% faster on decode, while manual review of eight coding tasks showed only a very small quality difference versus FP8.** The dense **27B BF16** run scored **77/80**, close to both Flash-Next variants, but took **1,058 s** for the full agent session versus **315 s for AWQ** and **425 s for FP8**.
 
 This is not an official model benchmark and it should not be generalized to other GPUs without retesting. The result is especially hardware/backend dependent because the AWQ build used WNA16/Marlin on SM80 while the FP8 build used a different execution path.
 
@@ -115,6 +116,30 @@ VLLM_ALLOW_LONG_MAX_MODEL_LEN=1 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 
 The served model name intentionally remained the same as the FP8 profile because the surrounding local software expected a fixed API model ID. It does not mean the AWQ checkpoint was FP8.
 
+### Dense Qwen3.8-27B BF16
+
+The third coding-agent run used the dense 27B checkpoint on **two CMP 170HX GPUs**:
+
+```text
+/run/media/server/nvme/vllm_model/Qwen3.8-27B/
+```
+
+Serving configuration:
+
+- `CUDA_VISIBLE_DEVICES=0,3`;
+- tensor parallel size 2;
+- BF16 weights / activations;
+- no quantization (`quantization=None`);
+- MTP enabled with **5 speculative tokens**;
+- native model context **262,144 tokens** for this coding test;
+- BF16 KV cache;
+- chunked prefill and prefix caching enabled;
+- `max_num_batched_tokens=8192`.
+
+The startup log resolved the model as `Qwen3_5ForConditionalGeneration` and the speculative head as `Qwen3_5MTP`. The 51.75 GiB checkpoint used about **26.16 GiB per GPU** under TP=2. vLLM reported about **32.12 GiB of KV-cache memory per GPU** and a total KV capacity of roughly **927k tokens**, so the 262K single-agent test had ample cache headroom.
+
+This 27B run is included in the **coding-agent quality and wall-clock comparison only**. A 512K/520K long-context speed run for 27B had not yet been performed at the time of this article update.
+
 ---
 
 ## Benchmark methodology
@@ -196,7 +221,7 @@ This means the observed speedup is a property of the full stack: **checkpoint fo
 
 ## Coding quality test
 
-Speed alone is not enough for a coding model, so both models were given the same eight tasks in separate fresh turns.
+Speed alone is not enough for a coding model, so **all three configurations** were given the same eight tasks in separate fresh turns.
 
 The task set covered:
 
@@ -215,19 +240,19 @@ The complete task statements and reference solutions are in [TASKS_AND_SOLUTIONS
 
 This was a manual review of correctness and requirement compliance, not an official benchmark score.
 
-| Task | AWQ W4A16 | FP8 | Main observation |
-|---|---:|---:|---|
-| 1. Session grouping | 9.5 | **10.0** | Both correct; FP8 explanation was slightly cleaner |
-| 2. AsyncCache | **10.0** | **10.0** | Both handled shared work, retry and cancellation well |
-| 3. Covering range | **10.0** | **10.0** | Correct heap solution, O(N log K) |
-| 4. PostgreSQL | 9.5 | 9.5 | Different but valid approaches |
-| 5. TypeScript parser | **10.0** | **10.0** | Both met the strict parsing contract |
-| 6. Storage semantics | 9.5 | **10.0** | AWQ additionally stripped email whitespace, which was outside the stated contract |
-| 7. TTL/LRU | **10.0** | **10.0** | Both converged to solid implementations |
-| 8. Bounded async runner | 9.5 | **10.0** | FP8 handled the subtle CancelledError distinction more cleanly |
-| **Total** | **78.0 / 80** | **79.5 / 80** | Very small quality gap |
+| Task | AWQ W4A16 | FP8 | Dense 27B BF16 | Main observation |
+|---|---:|---:|---:|---|
+| 1. Session grouping | 9.5 | **10.0** | **10.0** | All solved it correctly; 27B and FP8 were slightly cleaner |
+| 2. AsyncCache | **10.0** | **10.0** | **10.0** | All handled shared work, retry and cancellation well |
+| 3. Covering range | **10.0** | **10.0** | **10.0** | Correct heap solution, O(N log K) |
+| 4. PostgreSQL | 9.5 | 9.5 | **10.0** | 27B produced a particularly clean SQL solution |
+| 5. TypeScript parser | **10.0** | **10.0** | **10.0** | All met the strict parsing contract |
+| 6. Storage semantics | 9.5 | **10.0** | **10.0** | AWQ additionally stripped email whitespace, which was outside the stated contract |
+| 7. TTL/LRU | **10.0** | **10.0** | **7.5** | 27B tied expiry cleanup to LRU order and missed a stale-entry counterexample |
+| 8. Bounded async runner | 9.5 | **10.0** | 9.5 | FP8 handled the subtle CancelledError distinction most cleanly |
+| **Total** | **78.0 / 80** | **79.5 / 80** | **77.0 / 80** | All three were close, but 27B had one real logic miss in task 7 |
 
-The important result is not the 1.5-point difference by itself. It is that **AWQ did not fail any of the eight tasks outright**. The quality loss in this sample was subtle rather than catastrophic.
+The important result is not the small score spread by itself. **AWQ did not fail any of the eight tasks outright**, while dense 27B also stayed close overall but exposed one meaningful reasoning error in task 7. Its LRU/TTL design used LRU order to drive lazy expiry cleanup, so an expired MRU entry could survive while a fresh LRU entry was evicted. That made task 7 a useful discriminator between an implementation that looked plausible and one that satisfied the full contract.
 
 ---
 
@@ -235,21 +260,21 @@ The important result is not the 1.5-point difference by itself. It is that **AWQ
 
 The session logs contain turn timestamps, allowing the total solve time to be compared as well.
 
-| Task | AWQ W4A16 | FP8 |
-|---|---:|---:|
-| 1 | **15.3 s** | 33.8 s |
-| 2 | **46.9 s** | 59.1 s |
-| 3 | **35.0 s** | 47.4 s |
-| 4 | **34.6 s** | 43.1 s |
-| 5 | **28.8 s** | 47.3 s |
-| 6 | **22.8 s** | 30.1 s |
-| 7 | **60.5 s** | 81.6 s |
-| 8 | **71.4 s** | 82.7 s |
-| **Total** | **315.2 s** | **425.1 s** |
+| Task | AWQ W4A16 | FP8 | Dense 27B BF16 |
+|---|---:|---:|---:|
+| 1 | **15.3 s** | 33.8 s | 36.7 s |
+| 2 | **46.9 s** | 59.1 s | 71.4 s |
+| 3 | **35.0 s** | 47.4 s | 130.8 s |
+| 4 | **34.6 s** | 43.1 s | 69.8 s |
+| 5 | **28.8 s** | 47.3 s | 82.1 s |
+| 6 | **22.8 s** | 30.1 s | 59.4 s |
+| 7 | **60.5 s** | 81.6 s | 170.7 s |
+| 8 | **71.4 s** | 82.7 s | 437.2 s |
+| **Total** | **315.2 s** | **425.1 s** | **1,058.1 s** |
 
-AWQ completed the complete task set in about **5 min 15 s**, versus about **7 min 05 s** for FP8: roughly **25.8% less wall time**.
+AWQ completed the complete task set in about **5 min 15 s**, versus about **7 min 05 s** for FP8 and about **17 min 38 s** for dense 27B. The 27B session therefore took about **3.36× as long as AWQ** and about **2.49× as long as FP8**.
 
-This is an agent-level result, so it includes not only raw decoding speed but also differences in how many reasoning/tool steps each run took.
+This is an agent-level result, so it includes not only raw decoding speed but also differences in how many reasoning/tool steps each run took. The 27B model was especially iterative on tasks 7 and 8.
 
 ---
 
@@ -261,9 +286,10 @@ On this exact 4× CMP 170HX server, **Qwen3.8 Flash-Next AWQ W4A16 is currently 
 - about **+41% decode speed** across the same long-context range;
 - about **+43%** on the 10K-output generation test;
 - about **26% less wall time** on the eight-task coding-agent session;
-- only a small manual quality gap in this test set: **78/80 vs 79.5/80**.
+- only a small manual quality gap versus FP8 in this test set: **78/80 vs 79.5/80**;
+- and a much better quality/time trade-off than dense 27B in this agent session: **77/80 at 1,058 s** for 27B versus **78/80 at 315 s** for AWQ.
 
-FP8 still remains useful as a **maximum-confidence reference configuration** for difficult tasks where even a small quantization-induced reasoning difference may matter.
+FP8 still remains useful as a **maximum-confidence reference configuration** for difficult tasks where even a small quantization-induced reasoning difference may matter. Dense 27B remains interesting as a smaller two-GPU baseline, but in this specific agent run it did not show a quality advantage that compensated for the much longer solve time.
 
 The next useful test is not another synthetic speed run. It is a larger repo-level coding benchmark with multi-file edits, test execution, hidden regressions and long project context. That is where a small W4 quality loss, if present, is most likely to become visible.
 
