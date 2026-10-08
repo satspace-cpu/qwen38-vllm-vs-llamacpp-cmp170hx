@@ -12,7 +12,7 @@ The goal was not just to measure short-prompt tokens/s. We wanted to answer two 
 2. Does the much faster 4-bit AWQ model lose enough coding/reasoning quality to offset the speed gain?
 3. How does the smaller **dense Qwen3.8-27B BF16** model compare on the same coding-agent workload?
 
-The result on this machine was surprisingly clear: **AWQ W4A16 was about 21% faster on cold prefill and about 41% faster on decode, while manual review of eight coding tasks showed only a very small quality difference versus FP8.** The dense **27B BF16** run scored **77/80**, close to both Flash-Next variants, but took **1,058 s** for the full agent session versus **315 s for AWQ** and **425 s for FP8**.
+The result on this machine was surprisingly clear: **AWQ W4A16 was about 21% faster on cold prefill and about 41% faster on decode, while manual review of eight coding tasks showed only a very small quality difference versus FP8.** The dense **27B BF16** run scored **77/80**, close to both Flash-Next variants. Its measured agent time was **1,058 s**, but that timing was obtained on **2× CMP 170HX / TP=2**, whereas both Flash-Next runs used **4× CMP 170HX**. Therefore the 27B wall-clock result is recorded as a useful two-GPU baseline, **not as an apples-to-apples speed comparison**.
 
 This is not an official model benchmark and it should not be generalized to other GPUs without retesting. The result is especially hardware/backend dependent because the AWQ build used WNA16/Marlin on SM80 while the FP8 build used a different execution path.
 
@@ -272,7 +272,7 @@ The session logs contain turn timestamps, allowing the total solve time to be co
 | 8 | **71.4 s** | 82.7 s | 437.2 s |
 | **Total** | **315.2 s** | **425.1 s** | **1,058.1 s** |
 
-AWQ completed the complete task set in about **5 min 15 s**, versus about **7 min 05 s** for FP8 and about **17 min 38 s** for dense 27B. The 27B session therefore took about **3.36× as long as AWQ** and about **2.49× as long as FP8**.
+AWQ completed the complete task set in about **5 min 15 s**, FP8 in about **7 min 05 s**, and the dense 27B TP2 baseline in about **17 min 38 s**. However, the 27B timing must be interpreted separately: it used only **2 GPUs / TP=2**, while AWQ and FP8 used **4 GPUs**. The ratios versus AWQ/FP8 are therefore descriptive only and must not be treated as a fair same-hardware speed ranking.
 
 This is an agent-level result, so it includes not only raw decoding speed but also differences in how many reasoning/tool steps each run took. The 27B model was especially iterative on tasks 7 and 8.
 
@@ -287,9 +287,9 @@ On this exact 4× CMP 170HX server, **Qwen3.8 Flash-Next AWQ W4A16 is currently 
 - about **+43%** on the 10K-output generation test;
 - about **26% less wall time** on the eight-task coding-agent session;
 - only a small manual quality gap versus FP8 in this test set: **78/80 vs 79.5/80**;
-- and a much better quality/time trade-off than dense 27B in this agent session: **77/80 at 1,058 s** for 27B versus **78/80 at 315 s** for AWQ.
+- the current dense 27B run provides a useful **2-GPU TP2 baseline** at **77/80 and 1,058 s**, but a **4-GPU TP4 rerun is still required** before comparing its wall-clock efficiency directly against the two Flash-Next runs.
 
-FP8 still remains useful as a **maximum-confidence reference configuration** for difficult tasks where even a small quantization-induced reasoning difference may matter. Dense 27B remains interesting as a smaller two-GPU baseline, but in this specific agent run it did not show a quality advantage that compensated for the much longer solve time.
+FP8 still remains useful as a **maximum-confidence reference configuration** for difficult tasks where even a small quantization-induced reasoning difference may matter. Dense 27B remains interesting as a smaller two-GPU baseline. Its quality result is already useful, but its timing should stay provisional until the same eight tasks are rerun on **4× CMP 170HX / TP=4**.
 
 The next useful test is not another synthetic speed run. It is a larger repo-level coding benchmark with multi-file edits, test execution, hidden regressions and long project context. That is where a small W4 quality loss, if present, is most likely to become visible.
 
@@ -325,6 +325,6 @@ plus a short-prompt 10,000-token generation test.
 - The API model ID was intentionally kept identical between profiles for compatibility with local software.
 - Prefix caching was enabled on the server, but the exact-cold benchmark used a unique prefix per test so the long-context numbers above are cold-prompt measurements.
 - The YaRN extension used `factor=2.0` with `original_max_position_embeddings=262144` and `max_model_len=524288`.
-- MTP was configured with four speculative tokens.
+- Flash-Next AWQ/FP8 used MTP with four speculative tokens. The current dense 27B TP2 coding run used five speculative tokens; the planned TP4 rerun should preferably use the same MTP depth as the Flash-Next runs for cleaner timing comparison.
 - These numbers are **single-request local inference results**, not multi-user serving throughput.
 - The benchmark reflects this exact hardware and fork state. Kernel selection can change materially between vLLM versions.
