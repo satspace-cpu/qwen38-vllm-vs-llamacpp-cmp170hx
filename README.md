@@ -187,3 +187,14 @@ A new 520K-context comparison is now available, including exact cold-prefill/dec
 - [Raw benchmark CSV](flash-next-awq-vs-fp8/benchmark_results.csv)
 
 Headline result on this server: AWQ W4A16 was about **21% faster on cold prefill**, about **41% faster on decode**, and completed the coding-agent task set in about **26% less wall time**, while the manual quality score remained close to FP8 (**78/80 vs 79.5/80**).
+
+
+---
+
+## Terminal-Bench 2.0: local Qwen3.8 vs cloud coding agents (six tasks)
+
+A new bilingual study compares three Qwen3.8 + DeepSeek Harness local configurations (AWQ W4A16, FP8, dense 27B BF16) against published GPT-5.5, GPT-5.3-Codex, Claude Opus 4.6, Gemini 3.1 Pro and multi-model agent submissions on **the same six Terminal-Bench 2.0 tasks**. Includes the complete result matrix, 4× CMP170HX hardware details, limitations and machine-readable CSV.
+
+- [English article](terminal-bench-2-six-tasks/README.md)
+- [Статья на русском](terminal-bench-2-six-tasks/README_RU.md)
+- [Full cloud and local comparison CSV](terminal-bench-2-six-tasks/ranking_6_tasks.csv)
