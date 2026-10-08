@@ -33,6 +33,8 @@ Local binary 0/1 scores represent **selected final runs**, not controlled single
 
 ## Full comparison: 3 local configurations and published cloud systems
 
+**🟩 AWQ · 🟦 FP8 · 🟪 Dense BF16 — local systems are color-coded and bold, including every score.**
+
 Each cell is a percentage (0–100); the six-task mean is the arithmetic average of all six cells. Cloud means and local selected-run outcomes are different statistics. Ties share a rank.
 
 | System (model + agent) | Regex | WAL | Tokens | Cython | SQL | Text | 6-task mean |
@@ -49,9 +51,9 @@ Each cell is a percentage (0–100); the six-task mean is the arithmetic average
 | Mux / GPT-5.3-Codex | 100 | 60 | 100 | 100 | 60 | 100 | 86.7% |
 | Judy / Gemini 3.1 Pro | 100 | 100 | 100 | 60 | 66.7 | 80 | 84.5% |
 | Ante / Gemini 3.1 Pro | 100 | 20 | 80 | 100 | 100 | 100 | 83.3% |
-| Local / Qwen3.8 27B BF16 / DSH | 100 | 100 | 100 | 100 | 0 | 100 | 83.3% |
-| Local / Qwen3.8 Flash-Next AWQ W4A16 / DSH | 100 | 100 | 0 | 100 | 100 | 100 | 83.3% |
-| Local / Qwen3.8 Flash-Next FP8 / DSH | 100 | 100 | 100 | 100 | 0 | 100 | 83.3% |
+| **🟪 LOCAL — Qwen3.8 27B BF16 / DSH** | **100** | **100** | **100** | **100** | **0** | **100** | **83.3%** |
+| **🟩 LOCAL — Qwen3.8 Flash-Next AWQ W4A16 / DSH** | **100** | **100** | **0** | **100** | **100** | **100** | **83.3%** |
+| **🟦 LOCAL — Qwen3.8 Flash-Next FP8 / DSH** | **100** | **100** | **100** | **100** | **0** | **100** | **83.3%** |
 | WozCode / Claude Opus 4.6 | 100 | 100 | 60 | 80 | 60 | 100 | 83.3% |
 | Droid / GPT-5.3-Codex | 100 | 40 | 100 | 100 | 40 | 100 | 80.0% |
 | Junie CLI / multiple models | 100 | 20 | 100 | 100 | 60 | 100 | 80.0% |
