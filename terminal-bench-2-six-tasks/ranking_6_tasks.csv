@@ -1,0 +1,38 @@
+system,model_family,regex_log,db_wal_recovery,count_dataset_tokens,build_cython_ext,query_optimize,large_scale_text_editing,mean_6_tasks_pct,source_type
+"LemonHarness / GPT-5.3-Codex","GPT-5.3-Codex",100,100,100,100,100,100,100.00,public_submission_task_average
+"NexAU-AHE / GPT-5.5","GPT-5.5",100,100,100,100,100,100,100.00,public_submission_task_average
+"OB-1 / GPT-5.4 + GPT-5.3 + Claude","Multiple models",100,100,100,100,100,100,100.00,public_submission_task_average
+"LemonCode / GPT-5.3-Codex","GPT-5.3-Codex",100,100,100,100,100,80,96.67,public_submission_task_average
+"Judy / Claude Opus 4.6","Claude Opus 4.6",100,100,100,100,75,100,95.83,public_submission_task_average
+"Polaris / Claude 4.7 + GPT-5.5 + Gemini 3.1","Multiple models",100,100,100,100,80,80,93.33,public_submission_task_average
+"spoox-o-m / GPT-5.3-Codex","GPT-5.3-Codex",100,80,100,100,75,100,92.50,public_submission_task_average
+"Capy / GPT-5.5","GPT-5.5",100,40,100,100,100,100,90.00,public_submission_task_average
+"Forge / Gemini 3.1 Pro","Gemini 3.1 Pro",100,100,100,20,100,100,86.67,public_submission_task_average
+"Mux / GPT-5.3-Codex","GPT-5.3-Codex",100,60,100,100,60,100,86.67,public_submission_task_average
+"Judy / Gemini 3.1 Pro","Gemini 3.1 Pro",100,100,100,60,66.7,80,84.45,public_submission_task_average
+"Ante / Gemini 3.1 Pro","Gemini 3.1 Pro",100,20,80,100,100,100,83.33,public_submission_task_average
+"Local / Qwen3.8 27B BF16 / DSH","Local",100,100,100,100,0,100,83.33,local_selected_final_trial
+"Local / Qwen3.8 Flash-Next AWQ W4A16 / DSH","Local",100,100,0,100,100,100,83.33,local_selected_final_trial
+"Local / Qwen3.8 Flash-Next FP8 / DSH","Local",100,100,100,100,0,100,83.33,local_selected_final_trial
+"WozCode / Claude Opus 4.6","Claude Opus 4.6",100,100,60,80,60,100,83.33,public_submission_task_average
+"Droid / GPT-5.3-Codex","GPT-5.3-Codex",100,40,100,100,40,100,80.00,public_submission_task_average
+"Junie CLI / multiple models","Multiple models",100,20,100,100,60,100,80.00,public_submission_task_average
+"CodeBrain 1.5 / GPT-5.3-Codex","GPT-5.3-Codex",100,100,60,100,0,100,76.67,public_submission_task_average
+"Copilot CLI / Claude Opus 4.6","Claude Opus 4.6",100,0,100,100,60,100,76.67,public_submission_task_average
+"Meta-Harness / Claude Opus 4.6","Claude Opus 4.6",100,100,40,100,20,100,76.67,public_submission_task_average
+"Simple-Codex / GPT-5.3-Codex","GPT-5.3-Codex",100,0,100,100,60,100,76.67,public_submission_task_average
+"Capy / Claude Opus 4.6","Claude Opus 4.6",100,20,100,100,20,100,73.33,public_submission_task_average
+"Terminus2 / GPT-5.3-Codex","GPT-5.3-Codex",100,0,100,100,40,100,73.33,public_submission_task_average
+"Crux / Claude Opus 4.6","Claude Opus 4.6",40,100,40,100,50,100,71.67,public_submission_task_average
+"OpenSage / GPT-5.3-Codex","GPT-5.3-Codex",100,20,80,100,50,80,71.67,public_submission_task_average
+"clnkr / GPT-5.5","GPT-5.5",100,0,100,100,20,100,70.00,public_submission_task_average
+"Codelia / GPT-5.3-Codex","GPT-5.3-Codex",100,0,100,100,20,100,70.00,public_submission_task_average
+"OB-1 / GPT-5.3 + Claude 4.5/4.6","Multiple models",100,0,100,100,20,100,70.00,public_submission_task_average
+"IndusAGI / GPT-5.3-Codex","GPT-5.3-Codex",100,20,100,100,20,75,69.17,public_submission_task_average
+"CodeBrain 1 / GPT-5.3-Codex","GPT-5.3-Codex",100,20,100,100,0,80,66.67,public_submission_task_average
+"Droid / Claude Opus 4.6","Claude Opus 4.6",100,0,60,100,40,100,66.67,public_submission_task_average
+"Mux / Claude Opus 4.6","Claude Opus 4.6",100,0,60,100,40,100,66.67,public_submission_task_average
+"Terminus-KIRA / Gemini 3.1 Pro","Gemini 3.1 Pro",100,20,100,80,0,100,66.67,public_submission_task_average
+"Terminus-KIRA / Claude Opus 4.6","Claude Opus 4.6",100,0,80,100,0,100,63.33,public_submission_task_average
+"Terminus2 / Claude Opus 4.6","Claude Opus 4.6",100,0,60,60,60,100,63.33,public_submission_task_average
+"Gemini CLI / Gemini 3.1 Pro","Gemini 3.1 Pro",100,20,100,50,,20,,public_submission_task_average
