@@ -1,0 +1,38 @@
+model_agent,source,regex_log,db_wal_recovery,count_dataset_tokens,build_cython_ext,query_optimize,large_scale_text_editing,score_6_percent,complete
+"LemonHarness / GPT-5.3-Codex",public_terminal_bench_analysis,100,100,100,100,100,100,100.00,true
+"NexAU-AHE / GPT-5.5",public_terminal_bench_analysis,100,100,100,100,100,100,100.00,true
+"OB-1 / multi-model (5.4,5.3,4.5,4.6)",public_terminal_bench_analysis,100,100,100,100,100,100,100.00,true
+"LemonCode / GPT-5.3-Codex",public_terminal_bench_analysis,100,100,100,100,100,80,96.67,true
+"Judy / Claude Opus 4.6",public_terminal_bench_analysis,100,100,100,100,75,100,95.83,true
+"Polaris / multi-model (Opus 4.7,GPT-5.5,Gemini)",public_terminal_bench_analysis,100,100,100,100,80,80,93.33,true
+"spoox-o-m / GPT-5.3-Codex",public_terminal_bench_analysis,100,80,100,100,75,100,92.50,true
+"Capy / GPT-5.5",public_terminal_bench_analysis,100,40,100,100,100,100,90.00,true
+"Forge / Gemini 3.1 Pro",public_terminal_bench_analysis,100,100,100,20,100,100,86.67,true
+"Mux / GPT-5.3-Codex",public_terminal_bench_analysis,100,60,100,100,60,100,86.67,true
+"Judy / Gemini 3.1 Pro",public_terminal_bench_analysis,100,100,100,60,66.7,80,84.45,true
+"Ante / Gemini 3.1 Pro",public_terminal_bench_analysis,100,20,80,100,100,100,83.33,true
+"Qwen3.8 27B BF16 / DSH (local)",local_dsh,100,100,100,100,0,100,83.33,true
+"Qwen3.8 Flash-Next AWQ W4A16 / DSH (local)",local_dsh,100,100,0,100,100,100,83.33,true
+"Qwen3.8 Flash-Next FP8 / DSH (local)",local_dsh,100,100,100,100,0,100,83.33,true
+"WozCode / Claude Opus 4.6",public_terminal_bench_analysis,100,100,60,80,60,100,83.33,true
+"Droid / GPT-5.3-Codex",public_terminal_bench_analysis,100,40,100,100,40,100,80.00,true
+"Junie CLI / multi-model",public_terminal_bench_analysis,100,20,100,100,60,100,80.00,true
+"CodeBrain 1.5 / GPT-5.3-Codex",public_terminal_bench_analysis,100,100,60,100,0,100,76.67,true
+"Copilot CLI / Claude Opus 4.6",public_terminal_bench_analysis,100,0,100,100,60,100,76.67,true
+"Meta-Harness / Claude Opus 4.6",public_terminal_bench_analysis,100,100,40,100,20,100,76.67,true
+"Simple-Codex / GPT-5.3-Codex",public_terminal_bench_analysis,100,0,100,100,60,100,76.67,true
+"Capy / Claude Opus 4.6",public_terminal_bench_analysis,100,20,100,100,20,100,73.33,true
+"Terminus2 / GPT-5.3-Codex",public_terminal_bench_analysis,100,0,100,100,40,100,73.33,true
+"Crux / Claude Opus 4.6",public_terminal_bench_analysis,40,100,40,100,50,100,71.67,true
+"OpenSage / GPT-5.3-Codex",public_terminal_bench_analysis,100,20,80,100,50,80,71.67,true
+"clnkr / GPT-5.5",public_terminal_bench_analysis,100,0,100,100,20,100,70.00,true
+"Codelia / GPT-5.3-Codex",public_terminal_bench_analysis,100,0,100,100,20,100,70.00,true
+"OB-1 / multi-model (5.3,4.5,4.6)",public_terminal_bench_analysis,100,0,100,100,20,100,70.00,true
+"IndusAGI / GPT-5.3-Codex",public_terminal_bench_analysis,100,20,100,100,20,75,69.17,true
+"CodeBrain 1 / GPT-5.3-Codex",public_terminal_bench_analysis,100,20,100,100,0,80,66.67,true
+"Droid / Claude Opus 4.6",public_terminal_bench_analysis,100,0,60,100,40,100,66.67,true
+"Mux / Claude Opus 4.6",public_terminal_bench_analysis,100,0,60,100,40,100,66.67,true
+"Terminus-KIRA / Gemini 3.1 Pro",public_terminal_bench_analysis,100,20,100,80,0,100,66.67,true
+"Terminus-KIRA / Claude Opus 4.6",public_terminal_bench_analysis,100,0,80,100,0,100,63.33,true
+"Terminus2 / Claude Opus 4.6",public_terminal_bench_analysis,100,0,60,60,60,100,63.33,true
+"Gemini CLI / Gemini 3.1 Pro",public_terminal_bench_analysis,100,20,100,50,,20,,false
