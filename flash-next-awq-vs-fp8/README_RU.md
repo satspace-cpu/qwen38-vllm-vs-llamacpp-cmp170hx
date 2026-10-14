@@ -1,5 +1,7 @@
 # Qwen3.8: Flash-Next AWQ W4A16 против Flash-Next FP8 против Dense 27B на CMP 170HX — 520K + coding-agent
 
+**Продолжение (14.10.2026):** [GLM-5.3-Flash против Qwen Next FP8/AWQ: 499K контекст и сложные агентные тесты](../glm53-vs-qwen-next/README_RU.md).
+
 [English version](README.md) · [Python-скрипт теста](bench_vllm_512k_exact_mtp4.py) · [Задачи и эталонные решения](TASKS_AND_SOLUTIONS_RU.md) · [CSV long-context](benchmark_results.csv) · [CSV coding-agent](coding_agent_results.csv)
 
 ## Зачем проводился этот тест

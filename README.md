@@ -1,5 +1,7 @@
 # Qwen3.8-27B: vLLM vs llama.cpp on 2× CMP 170HX 64 GB
 
+**New (Oct 2026):** [GLM-5.3-Flash vs Qwen Flash-Next FP8/AWQ on four CMP 170HX — bilingual benchmarks, coding-agent results, charts](glm53-vs-qwen-next/README.md).
+
 [Русская версия](README_RU.md)
 
 ## Overview
