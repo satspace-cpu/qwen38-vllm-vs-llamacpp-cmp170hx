@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 630" role="img" aria-label="Eight coding-agent tasks, time in seconds" >
+<rect width="1280" height="630" rx="14" fill="#0e1726"/>
+<text x="55" y="41" font-size="25" font-weight="700" font-family="Arial" fill="#eff7ff">Eight coding-agent tasks — elapsed wall time (seconds)</text>
+<line x1="96" y1="522" x2="1240" y2="522" stroke="#334155"/><text x="86" y="526" font-size="13" text-anchor="end" font-family="Arial" fill="#b9c8d9">0</text>
+<line x1="96" y1="438.47058823529414" x2="1240" y2="438.47058823529414" stroke="#334155"/><text x="86" y="442.47058823529414" font-size="13" text-anchor="end" font-family="Arial" fill="#b9c8d9">100</text>
+<line x1="96" y1="354.94117647058823" x2="1240" y2="354.94117647058823" stroke="#334155"/><text x="86" y="358.94117647058823" font-size="13" text-anchor="end" font-family="Arial" fill="#b9c8d9">200</text>
+<line x1="96" y1="271.4117647058823" x2="1240" y2="271.4117647058823" stroke="#334155"/><text x="86" y="275.4117647058823" font-size="13" text-anchor="end" font-family="Arial" fill="#b9c8d9">300</text>
+<line x1="96" y1="187.88235294117646" x2="1240" y2="187.88235294117646" stroke="#334155"/><text x="86" y="191.88235294117646" font-size="13" text-anchor="end" font-family="Arial" fill="#b9c8d9">400</text>
+<line x1="96" y1="104.35294117647061" x2="1240" y2="104.35294117647061" stroke="#334155"/><text x="86" y="108.35294117647061" font-size="13" text-anchor="end" font-family="Arial" fill="#b9c8d9">500</text>
+<text x="167.5" y="552" font-size="14" text-anchor="middle" font-family="Arial" fill="#dfe8f6">Task 1</text>
+<rect x="108.5" y="308.2" width="25" height="213.8" rx="3" fill="#20bd91"/>
+<rect x="138.5" y="509.2" width="25" height="12.8" rx="3" fill="#8b5cf6"/>
+<rect x="168.5" y="493.8" width="25" height="28.2" rx="3" fill="#fbbf24"/>
+<rect x="198.5" y="491.3" width="25" height="30.7" rx="3" fill="#3aa7ee"/>
+<text x="310.5" y="552" font-size="14" text-anchor="middle" font-family="Arial" fill="#dfe8f6">Task 2</text>
+<rect x="251.5" y="149.2" width="25" height="372.8" rx="3" fill="#20bd91"/>
+<rect x="281.5" y="482.8" width="25" height="39.2" rx="3" fill="#8b5cf6"/>
+<rect x="311.5" y="472.6" width="25" height="49.4" rx="3" fill="#fbbf24"/>
+<rect x="341.5" y="462.4" width="25" height="59.6" rx="3" fill="#3aa7ee"/>
+<text x="453.5" y="552" font-size="14" text-anchor="middle" font-family="Arial" fill="#dfe8f6">Task 3</text>
+<rect x="394.5" y="281.4" width="25" height="240.6" rx="3" fill="#20bd91"/>
+<rect x="424.5" y="492.8" width="25" height="29.2" rx="3" fill="#8b5cf6"/>
+<rect x="454.5" y="482.4" width="25" height="39.6" rx="3" fill="#fbbf24"/>
+<rect x="484.5" y="412.7" width="25" height="109.3" rx="3" fill="#3aa7ee"/>
+<text x="596.5" y="552" font-size="14" text-anchor="middle" font-family="Arial" fill="#dfe8f6">Task 4</text>
+<rect x="537.5" y="207.6" width="25" height="314.4" rx="3" fill="#20bd91"/>
+<rect x="567.5" y="493.1" width="25" height="28.9" rx="3" fill="#8b5cf6"/>
+<rect x="597.5" y="486.0" width="25" height="36.0" rx="3" fill="#fbbf24"/>
+<rect x="627.5" y="463.7" width="25" height="58.3" rx="3" fill="#3aa7ee"/>
+<text x="739.5" y="552" font-size="14" text-anchor="middle" font-family="Arial" fill="#dfe8f6">Task 5</text>
+<rect x="680.5" y="214.5" width="25" height="307.5" rx="3" fill="#20bd91"/>
+<rect x="710.5" y="497.9" width="25" height="24.1" rx="3" fill="#8b5cf6"/>
+<rect x="740.5" y="482.5" width="25" height="39.5" rx="3" fill="#fbbf24"/>
+<rect x="770.5" y="453.4" width="25" height="68.6" rx="3" fill="#3aa7ee"/>
+<text x="882.5" y="552" font-size="14" text-anchor="middle" font-family="Arial" fill="#dfe8f6">Task 6</text>
+<rect x="823.5" y="375.8" width="25" height="146.2" rx="3" fill="#20bd91"/>
+<rect x="853.5" y="503.0" width="25" height="19.0" rx="3" fill="#8b5cf6"/>
+<rect x="883.5" y="496.9" width="25" height="25.1" rx="3" fill="#fbbf24"/>
+<rect x="913.5" y="472.4" width="25" height="49.6" rx="3" fill="#3aa7ee"/>
+<text x="1025.5" y="552" font-size="14" text-anchor="middle" font-family="Arial" fill="#dfe8f6">Task 7</text>
+<rect x="966.5" y="187.1" width="25" height="334.9" rx="3" fill="#20bd91"/>
+<rect x="996.5" y="471.5" width="25" height="50.5" rx="3" fill="#8b5cf6"/>
+<rect x="1026.5" y="453.8" width="25" height="68.2" rx="3" fill="#fbbf24"/>
+<rect x="1056.5" y="379.4" width="25" height="142.6" rx="3" fill="#3aa7ee"/>
+<text x="1168.5" y="552" font-size="14" text-anchor="middle" font-family="Arial" fill="#dfe8f6">Task 8</text>
+<rect x="1109.5" y="350.6" width="25" height="171.4" rx="3" fill="#20bd91"/>
+<rect x="1139.5" y="462.4" width="25" height="59.6" rx="3" fill="#8b5cf6"/>
+<rect x="1169.5" y="452.9" width="25" height="69.1" rx="3" fill="#fbbf24"/>
+<rect x="1199.5" y="156.8" width="25" height="365.2" rx="3" fill="#3aa7ee"/>
+<rect x="70" y="61" width="15" height="15" rx="3" fill="#20bd91"/><text x="94" y="74" font-family="Arial" font-size="13.5" fill="#dbeafe">GLM-5.3</text>
+<rect x="355" y="61" width="15" height="15" rx="3" fill="#8b5cf6"/><text x="379" y="74" font-family="Arial" font-size="13.5" fill="#dbeafe">Qwen Next AWQ</text>
+<rect x="640" y="61" width="15" height="15" rx="3" fill="#fbbf24"/><text x="664" y="74" font-family="Arial" font-size="13.5" fill="#dbeafe">Qwen Next FP8</text>
+<rect x="925" y="61" width="15" height="15" rx="3" fill="#3aa7ee"/><text x="949" y="74" font-family="Arial" font-size="13.5" fill="#dbeafe">Qwen 27B BF16 / 2GPU</text>
+<text x="1240" y="593" text-anchor="end" font-family="Arial" font-size="13" fill="#aabacb">Times include tools and differing test depth; GLM ran eight consecutive turns in one context.</text></svg>

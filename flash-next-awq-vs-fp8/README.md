@@ -1,5 +1,7 @@
 # Qwen3.8: Flash-Next AWQ W4A16 vs Flash-Next FP8 vs Dense 27B on CMP 170HX — 520K Context + Coding Agent Test
 
+**GLM follow-up (14 Oct 2026):** [same eight coding-agent tasks: timings and independent review](../glm53-vs-qwen-next/coding-8-tasks/RESULTS_EN.md).
+
 **Follow-up (14 Oct 2026):** [GLM-5.3-Flash vs Qwen Next FP8/AWQ: 499K context and demanding coding-agent tests](../glm53-vs-qwen-next/README.md).
 
 [Русская версия](README_RU.md) · [Benchmark script](bench_vllm_512k_exact_mtp4.py) · [Tasks and reference solutions](TASKS_AND_SOLUTIONS.md) · [Long-context CSV](benchmark_results.csv) · [Coding-agent CSV](coding_agent_results.csv)
