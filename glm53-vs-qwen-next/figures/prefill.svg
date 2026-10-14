@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" role="img" aria-label="Effective prefill / tokens per second">
+<rect width="980" height="500" rx="14" fill="#101826"/>
+<text x="40" y="45" font-family="Arial,sans-serif" font-weight="bold" font-size="22" fill="#f0f5fd">Effective prefill / tokens per second</text>
+<line x1="96" y1="401" x2="948" y2="401" stroke="#334155"/><text x="83" y="405" text-anchor="end" font-size="13" font-family="Arial" fill="#c9d3e1">0</text>
+<line x1="96" y1="335.16666666666663" x2="948" y2="335.16666666666663" stroke="#334155"/><text x="83" y="339.16666666666663" text-anchor="end" font-size="13" font-family="Arial" fill="#c9d3e1">1500</text>
+<line x1="96" y1="269.3333333333333" x2="948" y2="269.3333333333333" stroke="#334155"/><text x="83" y="273.3333333333333" text-anchor="end" font-size="13" font-family="Arial" fill="#c9d3e1">3000</text>
+<line x1="96" y1="203.5" x2="948" y2="203.5" stroke="#334155"/><text x="83" y="207.5" text-anchor="end" font-size="13" font-family="Arial" fill="#c9d3e1">4500</text>
+<line x1="96" y1="137.66666666666663" x2="948" y2="137.66666666666663" stroke="#334155"/><text x="83" y="141.66666666666663" text-anchor="end" font-size="13" font-family="Arial" fill="#c9d3e1">6000</text>
+<line x1="96" y1="85" x2="948" y2="85" stroke="#334155"/><text x="83" y="89" text-anchor="end" font-size="13" font-family="Arial" fill="#c9d3e1">7200</text>
+<text x="96" y="428" text-anchor="middle" font-size="12" font-family="Arial" fill="#c9d3e1">0K</text>
+<text x="256.7547169811321" y="428" text-anchor="middle" font-size="12" font-family="Arial" fill="#c9d3e1">100K</text>
+<text x="417.50943396226415" y="428" text-anchor="middle" font-size="12" font-family="Arial" fill="#c9d3e1">200K</text>
+<text x="578.2641509433962" y="428" text-anchor="middle" font-size="12" font-family="Arial" fill="#c9d3e1">300K</text>
+<text x="739.0188679245283" y="428" text-anchor="middle" font-size="12" font-family="Arial" fill="#c9d3e1">400K</text>
+<text x="899.7735849056604" y="428" text-anchor="middle" font-size="12" font-family="Arial" fill="#c9d3e1">500K</text>
+<polyline fill="none" stroke="#20bd91" stroke-width="3.5" stroke-linejoin="round" points="132.0,180.5 167.9,135.0 239.6,113.2 383.2,111.4 526.8,128.2 583.4,133.5 613.0,131.3 898.8,147.5"/>
+<circle cx="132.0" cy="180.5" r="4.1" fill="#20bd91"/>
+<circle cx="167.9" cy="135.0" r="4.1" fill="#20bd91"/>
+<circle cx="239.6" cy="113.2" r="4.1" fill="#20bd91"/>
+<circle cx="383.2" cy="111.4" r="4.1" fill="#20bd91"/>
+<circle cx="526.8" cy="128.2" r="4.1" fill="#20bd91"/>
+<circle cx="583.4" cy="133.5" r="4.1" fill="#20bd91"/>
+<circle cx="613.0" cy="131.3" r="4.1" fill="#20bd91"/>
+<circle cx="898.8" cy="147.5" r="4.1" fill="#20bd91"/>
+<polyline fill="none" stroke="#9874ec" stroke-width="3.5" stroke-linejoin="round" points="120.1,248.7 198.9,249.5 301.8,250.4 517.2,252.8 739.0,255.3 899.8,256.5 931.9,256.9"/>
+<circle cx="120.1" cy="248.7" r="4.1" fill="#9874ec"/>
+<circle cx="198.9" cy="249.5" r="4.1" fill="#9874ec"/>
+<circle cx="301.8" cy="250.4" r="4.1" fill="#9874ec"/>
+<circle cx="517.2" cy="252.8" r="4.1" fill="#9874ec"/>
+<circle cx="739.0" cy="255.3" r="4.1" fill="#9874ec"/>
+<circle cx="899.8" cy="256.5" r="4.1" fill="#9874ec"/>
+<circle cx="931.9" cy="256.9" r="4.1" fill="#9874ec"/>
+<polyline fill="none" stroke="#ffad40" stroke-width="3.5" stroke-linejoin="round" points="120.1,278.3 198.9,275.8 301.8,276.8 517.2,278.6 739.0,280.3 899.8,281.2 931.9,281.4"/>
+<circle cx="120.1" cy="278.3" r="4.1" fill="#ffad40"/>
+<circle cx="198.9" cy="275.8" r="4.1" fill="#ffad40"/>
+<circle cx="301.8" cy="276.8" r="4.1" fill="#ffad40"/>
+<circle cx="517.2" cy="278.6" r="4.1" fill="#ffad40"/>
+<circle cx="739.0" cy="280.3" r="4.1" fill="#ffad40"/>
+<circle cx="899.8" cy="281.2" r="4.1" fill="#ffad40"/>
+<circle cx="931.9" cy="281.4" r="4.1" fill="#ffad40"/>
+<line x1="65" y1="470" x2="92" y2="470" stroke="#20bd91" stroke-width="4"/><text x="99" y="474" fill="#e6edf7" font-size="14" font-family="Arial">GLM-5.3 PP4</text>
+<line x1="365" y1="470" x2="392" y2="470" stroke="#9874ec" stroke-width="4"/><text x="399" y="474" fill="#e6edf7" font-size="14" font-family="Arial">Qwen Next AWQ TP4</text>
+<line x1="665" y1="470" x2="692" y2="470" stroke="#ffad40" stroke-width="4"/><text x="699" y="474" fill="#e6edf7" font-size="14" font-family="Arial">Qwen Next FP8 TP4</text>
+</svg>

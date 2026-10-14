@@ -1,0 +1,8 @@
+task,model_or_run,elapsed_minutes,agent_steps,tool_calls,passed_tests,evidence
+GPU scheduler,GLM-5.3-Flash,13.18,28,28,27,independently rerun 27/27
+GPU scheduler,Qwen Next agent session A,34.4,145,143,53,reported 53/53
+GPU scheduler,Qwen Next agent session B,49.94,82,81,49,reported 49/49
+Finance audit,GLM-5.3-Flash,10.67,39,38,21,independently rerun 21/21
+Finance audit,Qwen Next agent session A,24.08,67,70,48,reported 48/48
+Finance audit,Qwen Next agent session B,52.9,102,106,26,reported 26/26; archival session tail incomplete
+Finance regression follow-up,GLM-5.3-Flash,2.22,11,10,28,independently rerun 28/28

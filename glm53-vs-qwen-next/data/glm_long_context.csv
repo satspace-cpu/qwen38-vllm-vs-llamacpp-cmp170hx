@@ -1,0 +1,9 @@
+prompt_tokens,effective_prefill_tok_s,generation_tok_s,ttft_s,wall_time_s,generated_tokens,run_type
+22368,5025,154.7,4.49,,,earlier
+44697,6061,151.5,7.44,,,earlier
+89357,6557,151.8,13.78,,,earlier
+178681,6598,142.7,27.47,,,earlier
+268001,6216,135.2,43.77,,,earlier
+303213,6095.9,155.6,49.741,56.315,1024,cold-prefix
+321593,6146,133.6,53.23,,,earlier
+499403,5775.4,145.4,86.47,93.506,1024,cold-prefix

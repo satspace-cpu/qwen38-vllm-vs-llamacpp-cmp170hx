@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 502" role="img" aria-label="Agent wall-clock times in minutes">
+<rect width="980" height="502" rx="14" fill="#101826"/>
+<text x="35" y="45" font-family="Arial" font-size="22" font-weight="bold" fill="#f0f5fd">Agent wall time: lower is faster, minutes</text>
+<line x1="83" y1="400" x2="935" y2="400" stroke="#334155"/><text x="73" y="404" fill="#cbd5e1" text-anchor="end" font-size="13" font-family="Arial">0</text>
+<line x1="83" y1="348.8333333333333" x2="935" y2="348.8333333333333" stroke="#334155"/><text x="73" y="352.8333333333333" fill="#cbd5e1" text-anchor="end" font-size="13" font-family="Arial">10</text>
+<line x1="83" y1="297.6666666666667" x2="935" y2="297.6666666666667" stroke="#334155"/><text x="73" y="301.6666666666667" fill="#cbd5e1" text-anchor="end" font-size="13" font-family="Arial">20</text>
+<line x1="83" y1="246.5" x2="935" y2="246.5" stroke="#334155"/><text x="73" y="250.5" fill="#cbd5e1" text-anchor="end" font-size="13" font-family="Arial">30</text>
+<line x1="83" y1="195.33333333333334" x2="935" y2="195.33333333333334" stroke="#334155"/><text x="73" y="199.33333333333334" fill="#cbd5e1" text-anchor="end" font-size="13" font-family="Arial">40</text>
+<line x1="83" y1="144.16666666666666" x2="935" y2="144.16666666666666" stroke="#334155"/><text x="73" y="148.16666666666666" fill="#cbd5e1" text-anchor="end" font-size="13" font-family="Arial">50</text>
+<line x1="83" y1="93" x2="935" y2="93" stroke="#334155"/><text x="73" y="97" fill="#cbd5e1" text-anchor="end" font-size="13" font-family="Arial">60</text>
+<rect x="144" y="332.6" width="63" height="67.4" rx="6" fill="#20bd91"/><text x="175.5" y="322.6" text-anchor="middle" fill="#f3f7fa" font-size="15" font-family="Arial">13.2</text>
+<rect x="229" y="224.0" width="63" height="176.0" rx="6" fill="#9874ec"/><text x="260.5" y="214.0" text-anchor="middle" fill="#f3f7fa" font-size="15" font-family="Arial">34.4</text>
+<rect x="314" y="144.5" width="63" height="255.5" rx="6" fill="#ffad40"/><text x="345.5" y="134.5" text-anchor="middle" fill="#f3f7fa" font-size="15" font-family="Arial">49.9</text>
+<text x="264" y="435" fill="#cbd5e1" font-family="Arial" font-size="16" text-anchor="middle">GPU scheduling</text>
+<rect x="560" y="345.4" width="63" height="54.6" rx="6" fill="#20bd91"/><text x="591.5" y="335.4" text-anchor="middle" fill="#f3f7fa" font-size="15" font-family="Arial">10.7</text>
+<rect x="645" y="276.8" width="63" height="123.2" rx="6" fill="#9874ec"/><text x="676.5" y="266.8" text-anchor="middle" fill="#f3f7fa" font-size="15" font-family="Arial">24.1</text>
+<rect x="730" y="129.3" width="63" height="270.7" rx="6" fill="#ffad40"/><text x="761.5" y="119.3" text-anchor="middle" fill="#f3f7fa" font-size="15" font-family="Arial">52.9</text>
+<text x="680" y="435" fill="#cbd5e1" font-family="Arial" font-size="16" text-anchor="middle">Finance audit</text>
+<rect x="175" y="62" width="15" height="15" rx="3" fill="#20bd91"/><text x="199" y="75" fill="#e6edf7" font-size="14" font-family="Arial">GLM</text>
+<rect x="395" y="62" width="15" height="15" rx="3" fill="#9874ec"/><text x="419" y="75" fill="#e6edf7" font-size="14" font-family="Arial">Qwen A</text>
+<rect x="615" y="62" width="15" height="15" rx="3" fill="#ffad40"/><text x="639" y="75" fill="#e6edf7" font-size="14" font-family="Arial">Qwen B</text>
+<text x="935" y="478" fill="#a3b5c9" font-family="Arial" font-size="12" text-anchor="end">Times include agent tool use and differently scoped validation.</text></svg>
