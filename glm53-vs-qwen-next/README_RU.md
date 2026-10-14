@@ -1,6 +1,6 @@
 # GLM-5.3-Flash против Qwen3.8 Flash-Next FP8 / AWQ на 4× CMP 170HX
 
-**Результаты 8 coding-agent задач — только правильность:** [сравнение GLM с Qwen FP8, AWQ и 27B](coding-8-tasks/RESULTS_RU.md). Время не сравнивается: во время теста GLM сервер одновременно обрабатывал ещё два потока.
+**Результаты 8 coding-agent задач — только правильность:** [сравнение GLM с Qwen FP8, AWQ и 27B](coding-8-tasks/RESULTS_RU.md). **Баллы из 80: FP8 79,5 · AWQ 78 · 27B BF16 77 · GLM 76.** Время GLM не сравнивается: во время теста сервер одновременно обрабатывал ещё два потока.
 
 **Повтор 8 coding-agent задач на GLM:** [отдельные задания без решений и инструкция](coding-8-tasks/README_RU.md) · [все 8 условий одним файлом](coding-8-tasks/TASKS_ONLY_RU.md).
 **Практический тест — 14 октября 2026.** [English version](README.md) · [Предыдущая статья AWQ против FP8](../flash-next-awq-vs-fp8/README_RU.md)

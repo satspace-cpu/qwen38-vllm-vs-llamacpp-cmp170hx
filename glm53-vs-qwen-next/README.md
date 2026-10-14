@@ -1,6 +1,6 @@
 # GLM-5.3-Flash vs Qwen3.8 Flash-Next FP8 / AWQ — 4× CMP 170HX
 
-**Eight-task follow-up — correctness only:** [GLM vs Qwen FP8, AWQ and 27B](coding-8-tasks/RESULTS_EN.md). GLM agent timing is excluded because two concurrent inference workloads shared the server.
+**Eight-task follow-up — correctness only:** [GLM vs Qwen FP8/AWQ/27B](coding-8-tasks/RESULTS_EN.md). **Scores /80: FP8 79.5 · AWQ 78 · dense 27B 77 · GLM 76.** GLM agent timing is excluded because two concurrent inference workloads shared the server.
 
 **GLM follow-up — eight coding tasks:** [solution-free individual prompts and run protocol (RU)](coding-8-tasks/README_RU.md) · [all eight statements](coding-8-tasks/TASKS_ONLY_RU.md).
 **Real-world benchmark and coding-agent follow-up, 14 October 2026.** [Русский](README_RU.md) · [Original Qwen AWQ/FP8 article](../flash-next-awq-vs-fp8/README.md)
